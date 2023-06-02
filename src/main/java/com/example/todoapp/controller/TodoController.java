@@ -24,12 +24,15 @@ public class TodoController {
 
     @PostMapping("/addTodo")
     public String addTodo(@RequestParam("todo") String todo) {
-//      System.out.println(todo);   // 입력 받은 값 Console 출력
+
+        System.out.println(todo);   // 입력 받은 값 Console 출력
 
         //database에 저장
         Todo toDo = new Todo();
         toDo.setTodo(todo);
+
         todoRepository.save(toDo);
+
         return "redirect:/";
     }
 
